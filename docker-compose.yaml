@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  bot:
+    build: ./tgbot
+    restart: unless-stopped
+    command: sh -c "dotnet matreshki_fg_bot.dll"
+    environment:
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=5
+      - WAIT_HOST_CONNECT_TIMEOUT=5
